@@ -14,11 +14,11 @@ COPY src ./src
 RUN mvn -B package -DskipTests
 
 
-# ───────────── STAGE 2 : RUN (JRE 21 léger) ─────────────
-FROM eclipse-temurin:21-jre
+# # ───────────── STAGE 2 : RUN (JRE 21 léger) ─────────────
+# FROM eclipse-temurin:21-jre
 
-# Copier uniquement le jar généré depuis le stage de build
-COPY --from=build /astraScriptum/target/*.jar app.jar
+# # Copier uniquement le jar généré depuis le stage de build
+# COPY --from=build ./target/*.jar astraScriptum-0.0.1-SNAPSHOT.jar
 
 # Exposer le port Spring Boot
 EXPOSE 8080
