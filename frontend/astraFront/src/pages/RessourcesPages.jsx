@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import AppBar from "../components/AppBar";
+import Bouton from "../components/Bouton";
 import Footer from "../components/Footer";
 
 export default function RessourcePage() {

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import AppBar from "../components/AppBar";
+import Bouton from "../components/Bouton";
+import Footer from "../components/Footer";
 import village from "../assets/img/village.png";
 import gaulois from "../assets/img/gaulois.png";
 
@@ -178,7 +180,7 @@ export default function ScenarioPage() {
                 </div>
             )}
 
-
+            <Footer />
         </div>
     );
 }

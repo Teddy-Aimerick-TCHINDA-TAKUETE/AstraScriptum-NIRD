@@ -15,6 +15,7 @@ import {
     Legend
 } from 'chart.js';
 import AppBar from "../components/AppBar";
+import Bouton from "../components/Bouton";
 import Footer from "../components/Footer";
 
 ChartJS.register(
