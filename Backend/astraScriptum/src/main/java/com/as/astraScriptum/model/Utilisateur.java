@@ -25,6 +25,7 @@ public class Utilisateur {
 
 	private String nom;
 	private String mail;
+	private String password;
 
 	@Enumerated(EnumType.STRING)
 	private TypeUtilisateur type;
