@@ -29,12 +29,13 @@ export default function HomePage() {
                         <a href="/ressources" className="btn btn-outline-light btn-lg">
                             <i className="fas fa-book me-2"></i>Ressources
                         </a>
+                        <a href="/dashboard" className="btn btn-success btn-lg mt-3">
+                            <i className="fas fa-arrow-circle-right me-2"></i>Voir le dashboard
+                        </a>
                     </div>
                 </div>
             </section>
-            <a href="/dashboard" className="btn btn-success btn-lg mt-3">
-                <i className="fas fa-arrow-circle-right me-2"></i>Voir le dashboard
-            </a>
+
             {/* FEATURES SECTION */}
             <section className="features-section container py-5">
                 <h2 className="section-title text-center mb-5">
