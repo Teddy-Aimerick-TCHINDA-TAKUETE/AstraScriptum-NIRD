@@ -1,15 +1,16 @@
+/* eslint-disable react-refresh/only-export-components */
 // cspell:disable
 import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://astrascriptum.onrender.com";
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // ⚡ au montage : on relit le token depuis localStorage → session persistante
+  // au montage : on relit le token depuis localStorage → session persistante
   useEffect(() => {
     const storedToken = localStorage.getItem("jwt");
     if (storedToken) {
