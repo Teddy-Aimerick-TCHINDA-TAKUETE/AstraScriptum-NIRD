@@ -1,0 +1,53 @@
+// Exemple de variables SCSS
+$orange: #f57c00;
+$white: #ffffff;
+
+.contenant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  .bouton-gauche,
+  .bouton-droite {
+    display: flex;
+    gap: 10px;
+  }
+
+  .bouton-droite {
+    justify-content: flex-end;
+  }
+
+  .btn {
+    background-color: $orange;
+    border-color: $white;
+    color: $white;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+
+    &:hover {
+      background-color: orangered;
+      color: $white;
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &.anim {
+      animation: fadeInUp 0.5s ease both;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

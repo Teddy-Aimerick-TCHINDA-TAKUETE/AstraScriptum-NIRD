@@ -1,3 +1,4 @@
+//cspell:disable
 package com.as.astraScriptum.model;
 
 import java.util.List;

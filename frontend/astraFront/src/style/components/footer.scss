@@ -1,0 +1,58 @@
+$orange: #f57c00;
+$white: #ffffff;
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 1rem;
+    background-color: #222;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.8s ease;
+
+    .brand {
+        font-weight: bold;
+        color: #f57c00;
+        font-size: 1rem;
+        text-shadow: 0 0 5px rgba(255, 165, 0, 0.6);
+    }
+
+    .separator {
+        color: #777;
+    }
+
+    .powered {
+        font-style: italic;
+        color: #aaa;
+    }
+
+    .text {
+        color: #ccc;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
