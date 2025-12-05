@@ -37,6 +37,11 @@ public class UtilisateurService {
 	}
 
 	public UtilisateurDTO create(CreateUtilisateurDTO dto) {
+
+		utilisateurRepository.findByMail(dto.getMail()).ifPresent(u -> {
+			throw new IllegalArgumentException("Un utilisateur avec cet email existe déjà !");
+		});
+
 		Utilisateur utilisateur = new Utilisateur();
 		utilisateur.setId(UUID.randomUUID().toString());
 		utilisateur.setNom(dto.getNom());
