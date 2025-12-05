@@ -1,6 +1,6 @@
 //cspell:disable
-@import '/AstraScriptum/frontend/astraFront/src/style/components/appbar.scss';
-@import '/AstraScriptum/frontend/astraFront/src/style/settings';
-@import '/AstraScriptum/frontend/astraFront/src/style/components/footer.scss';
-@import '/AstraScriptum/frontend/astraFront/src/style/components/bouton';
-@import '/AstraScriptum/frontend/astraFront/src/style/components/bouton';
+@import './appbar.scss';
+@import '../settings';
+@import './footer.scss';
+@import './bouton';
+@import './HomePage.scss'

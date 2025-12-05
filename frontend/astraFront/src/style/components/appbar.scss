@@ -1,5 +1,5 @@
 //cspell:disable
-$orange: #f57c00;
+$orange: #F15927;
 $white: #ffffff;
 $bgcolor: #222;
 
@@ -59,14 +59,15 @@ $bgcolor: #222;
   color: $orange;
 
 }
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

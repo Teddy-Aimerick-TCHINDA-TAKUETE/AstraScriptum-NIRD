@@ -1,0 +1,162 @@
+// Fonts
+@font-face {
+    font-family: "font-1";
+    src: url("../assets/fonts/KodeMono-Bold.ttf");
+}
+
+$font-1: "font-1", sans-serif;
+
+// Palette limitée
+$orange: #F15927;
+$black: #000000;
+$white: #ffffff;
+
+// Reset
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $white;
+    font-family: $font-1;
+    color: $black;
+    line-height: 1.6;
+}
+
+// LISTES
+li {
+    list-style-type: none;
+}
+
+// HERO SECTION
+.hero-section {
+    height: 90vh;
+    background-color: $black;
+    background-image: url("../assets/img/hero-nird.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        z-index: 2;
+        position: relative;
+        letter-spacing: 2px;
+        color: $orange;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-top: 15px;
+        max-width: 750px;
+        margin: 0 auto;
+        line-height: 1.6;
+        z-index: 2;
+        position: relative;
+        color: $white;
+    }
+
+    .hero-buttons .btn {
+        z-index: 2;
+        position: relative;
+        transition: 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// BUTTONS
+.btn-primary {
+    background-color: $orange;
+    color: $white;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: darken($orange, 10%);
+    }
+}
+
+.btn-secondary {
+    background-color: $white;
+    border: 1px solid $orange;
+    color: $orange;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+.btn-link {
+    background: none;
+    color: $orange;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// FEATURES
+.features-section {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.feature-card {
+    background: $black;
+    border: 1px solid $orange;
+    border-radius: 15px;
+    padding: 1.2rem;
+    color: $white;
+    transition: 0.3s, transform 0.3s;
+
+    &:hover {
+        background: $orange;
+        color: $black;
+        transform: translateY(-7px);
+    }
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: $white;
+    margin-bottom: 15px;
+}
+
+// CTA
+.cta-section {
+    padding: 80px 20px;
+    background-color: $orange;
+    color: $white;
+    text-align: center;
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
