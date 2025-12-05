@@ -11,11 +11,11 @@ const AppBar = () => {
                 <header>
                     <div className="logo">
                         <Link to="/acceuil" className="text-decoration-none" style={{ color: 'inherit' }}>
-                            <i className="fas fa-home fa-2x"></i> BIENVENUE DANS VOTRE BANQUE CREDIT MUTUEL
+                            <i className="fas fa-home fa-2x"></i> PLATEFORME DU NIRD
                         </Link>
 
                     </div>
-                    <p>AGENCE DE LIMOGES</p>
+                    <p>ASTRASCRIPTUM</p>
                 </header>
             </div>
         </div>
