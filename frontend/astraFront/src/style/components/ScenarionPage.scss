@@ -1,0 +1,113 @@
+$orange: #F15927;
+$black: #000;
+$white: #fff;
+
+.scenario-page {
+    position: relative;
+    min-height: 100vh;
+    color: $black;
+    font-family: "font-1", sans-serif;
+
+    .background {
+        background-image: url("/assets/village.png");
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        filter: brightness(0.85);
+    }
+
+    .character {
+        display: flex;
+        align-items: center;
+        margin: 2rem;
+
+        img {
+            width: 120px;
+            animation: bounce 2s infinite;
+        }
+
+        .speech {
+            background: $white;
+            border: 2px solid $orange;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-left: 1rem;
+            max-width: 400px;
+
+            button {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    .score-box {
+        background: $orange;
+        color: $white;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        display: inline-block;
+        margin: 1rem;
+        font-weight: bold;
+    }
+
+    .room-card {
+        background: $white;
+        border: 2px solid $orange;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            background: $orange;
+            color: $black;
+        }
+
+        button {
+            margin: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            background: $orange;
+            color: $white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            i {
+                margin-right: 0.5rem;
+            }
+
+            &:hover {
+                background: darken($orange, 10%);
+            }
+        }
+    }
+
+    .recommendation-box {
+        background: $black;
+        color: $white;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 2rem auto;
+        max-width: 600px;
+        text-align: center;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
