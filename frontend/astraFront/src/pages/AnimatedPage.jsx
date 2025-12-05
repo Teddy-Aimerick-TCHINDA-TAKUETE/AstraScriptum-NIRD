@@ -14,6 +14,7 @@ export default function AnimatedPage() {
 
     return (
         <div className="animate__animated animate__bounce  animate__delay-2s" style={{ height: '100vh', width: '100vw', overflowX: 'hidden' }}>
+            <AppBar />
             <Bouton />
             <div className="container py-5 animated-page">
                 <h1 className="text-center mb-4 text-orange">Village Numérique Résistant</h1>

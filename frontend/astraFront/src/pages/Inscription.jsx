@@ -30,8 +30,8 @@ const Inscription = () => {
 
   return (
     <div style={{ height: '120vh', width: '100vw', overflowX: 'hidden', backgroundColor: "#000", color: "#fff" }}>
-      <Bouton />
       <AppBar />
+      <Bouton />
       <main
         style={{
           display: "flex",

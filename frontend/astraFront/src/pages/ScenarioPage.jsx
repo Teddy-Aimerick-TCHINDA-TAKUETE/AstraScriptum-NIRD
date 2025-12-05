@@ -44,6 +44,7 @@ export default function ScenarioPage() {
     return (
         <div style={{ height: '100vh', width: '100vw', overflowX: 'hidden', position: 'relative' }}>
             <AppBar />
+            <Bouton />
 
             {/* Image de fond */}
             <div style={{

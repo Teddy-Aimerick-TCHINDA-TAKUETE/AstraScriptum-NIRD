@@ -1,11 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
 // cspell:disable
 import { createContext, useContext, useState, useEffect } from "react";
-import { VITE_API_URL } from "../environement.env"
 
 const AuthContext = createContext(null);
 
-const API_URL = "https://astrascriptum.onrender.com";
+const API_URL = "https://astrascriptum-nird-back.onrender.com/";
+// const API_URL = "http://localhost:8080";
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);

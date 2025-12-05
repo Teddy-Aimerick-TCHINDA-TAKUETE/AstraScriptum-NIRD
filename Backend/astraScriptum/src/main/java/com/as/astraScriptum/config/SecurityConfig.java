@@ -53,13 +53,9 @@ public class SecurityConfig {
 		CorsConfiguration config = new CorsConfiguration();
 
 		// 🔸 URL du front autorisé
-		config.setAllowedOrigins(List.of("http://localhost:5173", "https://astrascriptum.vercel.app", // ton
-																										// domaine
-																										// Vercel
-				"https://astrascriptum.onrender.com"
-		// tu rajouteras plus tard ton URL front Render ici
-		// "https://astrafront.onrender.com"
-		));
+		config.setAllowedOrigins(List.of("https://astrascriptum-nird.vercel.app"));
+
+//		config.setAllowedOrigins(List.of("http://localhost:5173", "https://astrascriptum-nird.vercel.app"));
 
 		// 🔸 Méthodes HTTP autorisées
 		config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));

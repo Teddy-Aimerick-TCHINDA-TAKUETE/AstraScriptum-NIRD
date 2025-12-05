@@ -15,6 +15,7 @@ export default function APropos() {
     return (
         <div className="animate__animated animate__bounce  animate__delay-2s" style={{ height: '100vh', width: '100vw', overflowX: 'hidden' }}>
             <AppBar />
+            <Bouton />
 
             <div className="container my-5">
                 <h1 style={{ color: orange }}><i className="fas fa-users me-2"></i> À propos des développeurs</h1>

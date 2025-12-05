@@ -69,6 +69,7 @@ export default function RessourcePage() {
     return (
         <div className="animate__animated animate__bounce  animate__delay-2s" style={{ height: '100vh', width: '100vw', overflowX: 'hidden' }}>
             <AppBar />
+            <Bouton />
 
             {/* Bandeau d’introduction */}
             <div className="text-center p-5" style={{ backgroundColor: orange, color: "#fff" }}>
