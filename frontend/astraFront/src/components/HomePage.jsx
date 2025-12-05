@@ -23,11 +23,14 @@ export default function HomePage() {
                         <a href="/presentation" className="btn btn-primary btn-lg me-3">
                             <i className="fas fa-play me-2"></i>Conseils pratiques
                         </a>
-                        <a href="/simulation" className="btn btn-primary btn-lg me-3">
+                        <a href="/connexion" className="btn btn-primary btn-lg me-3">
                             <i className="fas fa-play me-2"></i>Démarrer la Simulation
                         </a>
                         <a href="/ressources" className="btn btn-outline-light btn-lg">
                             <i className="fas fa-book me-2"></i>Ressources
+                        </a>
+                        <a href="/dashboard" className="btn btn-success btn-lg mt-3">
+                            <i className="fas fa-arrow-circle-right me-2"></i>Voir le dashboard
                         </a>
                     </div>
                 </div>
@@ -83,9 +86,7 @@ export default function HomePage() {
                 <p>
                     Lance-toi dans une aventure où stratégie, innovation et résistance s’unissent.
                 </p>
-                <a href="/simulation" className="btn btn-success btn-lg mt-3">
-                    <i className="fas fa-arrow-circle-right me-2"></i>Commencer Maintenant
-                </a>
+
             </section>
 
         </div>

@@ -22,8 +22,8 @@ const Connexion = () => {
       setErreur("Email ou mot de passe incorrect.");
       return;
     }
-    // après connexion : on renvoie vers l’accueil ou une page protégée
-    navigate("/acceuil");
+    // après connexion : on renvoie vers la simulation
+    navigate("/demarrer");
   };
 
   return (
