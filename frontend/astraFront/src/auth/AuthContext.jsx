@@ -5,7 +5,7 @@ import { VITE_API_URL } from "../environement.env"
 
 const AuthContext = createContext(null);
 
-const API_URL = VITE_API_URL;
+const API_URL = "https://astrascriptum.onrender.com";
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
