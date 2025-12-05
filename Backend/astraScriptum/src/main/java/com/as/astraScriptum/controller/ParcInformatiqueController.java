@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.ParcInformatiqueDTO;
 import com.as.astraScriptum.service.ParcInformatiqueService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/parcs-informatiques")
 public class ParcInformatiqueController {
@@ -39,14 +41,15 @@ public class ParcInformatiqueController {
 
 	// POST /api/parcs-informatiques
 	@PostMapping
-	public ResponseEntity<ParcInformatiqueDTO> create(@RequestBody ParcInformatiqueDTO dto) {
+	public ResponseEntity<ParcInformatiqueDTO> create(@Valid @RequestBody ParcInformatiqueDTO dto) {
 		ParcInformatiqueDTO created = parcService.create(dto);
 		return ResponseEntity.ok(created);
 	}
 
 	// PUT /api/parcs-informatiques/{id}
 	@PutMapping("/{id}")
-	public ResponseEntity<ParcInformatiqueDTO> update(@PathVariable String id, @RequestBody ParcInformatiqueDTO dto) {
+	public ResponseEntity<ParcInformatiqueDTO> update(@PathVariable String id,
+			@Valid @RequestBody ParcInformatiqueDTO dto) {
 		ParcInformatiqueDTO updated = parcService.update(id, dto);
 		return ResponseEntity.ok(updated);
 	}

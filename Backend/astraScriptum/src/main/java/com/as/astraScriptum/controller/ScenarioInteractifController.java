@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.ScenarioInteractifDTO;
 import com.as.astraScriptum.service.ScenarioInteractifService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/scenarios")
 public class ScenarioInteractifController {
@@ -39,7 +41,7 @@ public class ScenarioInteractifController {
 
 	// POST /api/scenarios
 	@PostMapping
-	public ResponseEntity<ScenarioInteractifDTO> create(@RequestBody ScenarioInteractifDTO dto) {
+	public ResponseEntity<ScenarioInteractifDTO> create(@Valid @RequestBody ScenarioInteractifDTO dto) {
 		ScenarioInteractifDTO created = scenarioService.create(dto);
 		return ResponseEntity.ok(created);
 	}
@@ -47,7 +49,7 @@ public class ScenarioInteractifController {
 	// PUT /api/scenarios/{id}
 	@PutMapping("/{id}")
 	public ResponseEntity<ScenarioInteractifDTO> update(@PathVariable String id,
-			@RequestBody ScenarioInteractifDTO dto) {
+			@Valid @RequestBody ScenarioInteractifDTO dto) {
 		ScenarioInteractifDTO updated = scenarioService.update(id, dto);
 		return ResponseEntity.ok(updated);
 	}

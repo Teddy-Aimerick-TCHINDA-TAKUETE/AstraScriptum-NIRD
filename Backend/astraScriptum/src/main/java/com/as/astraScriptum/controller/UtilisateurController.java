@@ -17,6 +17,8 @@ import com.as.astraScriptum.dto.UpdateUtilisateurDTO;
 import com.as.astraScriptum.dto.UtilisateurDTO;
 import com.as.astraScriptum.service.UtilisateurService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/utilisateurs")
 public class UtilisateurController {
@@ -41,14 +43,15 @@ public class UtilisateurController {
 
 	// POST /api/utilisateurs
 	@PostMapping
-	public ResponseEntity<UtilisateurDTO> create(@RequestBody CreateUtilisateurDTO dto) {
+	public ResponseEntity<UtilisateurDTO> create(@Valid @RequestBody CreateUtilisateurDTO dto) {
 		UtilisateurDTO created = utilisateurService.create(dto);
 		return ResponseEntity.ok(created);
 	}
 
 	// PUT /api/utilisateurs/{id}
 	@PutMapping("/{id}")
-	public ResponseEntity<UtilisateurDTO> update(@PathVariable String id, @RequestBody UpdateUtilisateurDTO dto) {
+	public ResponseEntity<UtilisateurDTO> update(@PathVariable String id,
+			@Valid @RequestBody UpdateUtilisateurDTO dto) {
 		UtilisateurDTO updated = utilisateurService.update(id, dto);
 		return ResponseEntity.ok(updated);
 	}

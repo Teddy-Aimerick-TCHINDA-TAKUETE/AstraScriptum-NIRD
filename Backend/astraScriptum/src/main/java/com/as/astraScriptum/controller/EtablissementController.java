@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.EtablissementDTO;
 import com.as.astraScriptum.service.EtablissementService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/etablissements")
 public class EtablissementController {
@@ -30,7 +32,7 @@ public class EtablissementController {
 
 	// POST /api/etablissements
 	@PostMapping
-	public ResponseEntity<EtablissementDTO> create(@RequestBody EtablissementDTO dto) {
+	public ResponseEntity<EtablissementDTO> create(@Valid @RequestBody EtablissementDTO dto) {
 		EtablissementDTO created = etablissementService.create(dto);
 		return ResponseEntity.ok(created);
 	}

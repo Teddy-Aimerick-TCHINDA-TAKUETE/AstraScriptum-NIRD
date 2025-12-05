@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.RecommendationIADTO;
 import com.as.astraScriptum.service.RecommendationIAService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/recommendations")
 public class RecommendationIAController {
@@ -38,7 +40,7 @@ public class RecommendationIAController {
 
 	// POST /api/recommendations
 	@PostMapping
-	public ResponseEntity<RecommendationIADTO> create(@RequestBody RecommendationIADTO dto) {
+	public ResponseEntity<RecommendationIADTO> create(@Valid @RequestBody RecommendationIADTO dto) {
 		RecommendationIADTO created = recommendationIAService.create(dto);
 		return ResponseEntity.ok(created);
 	}

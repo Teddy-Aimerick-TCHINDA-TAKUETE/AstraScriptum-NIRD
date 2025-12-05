@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.LogicielDTO;
 import com.as.astraScriptum.service.LogicielService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/logiciels")
 public class LogicielController {
@@ -39,14 +41,14 @@ public class LogicielController {
 
 	// POST /api/logiciels
 	@PostMapping
-	public ResponseEntity<LogicielDTO> create(@RequestBody LogicielDTO dto) {
+	public ResponseEntity<LogicielDTO> create(@Valid @RequestBody LogicielDTO dto) {
 		LogicielDTO created = logicielService.create(dto);
 		return ResponseEntity.ok(created);
 	}
 
 	// PUT /api/logiciels/{id}
 	@PutMapping("/{id}")
-	public ResponseEntity<LogicielDTO> update(@PathVariable String id, @RequestBody LogicielDTO dto) {
+	public ResponseEntity<LogicielDTO> update(@PathVariable String id, @Valid @RequestBody LogicielDTO dto) {
 		LogicielDTO updated = logicielService.update(id, dto);
 		return ResponseEntity.ok(updated);
 	}

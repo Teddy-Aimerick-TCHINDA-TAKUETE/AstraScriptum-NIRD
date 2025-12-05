@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.ActionUtilisateurDTO;
 import com.as.astraScriptum.service.ActionUtilisateurService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/actions")
 public class ActionUtilisateurController {
@@ -30,7 +32,7 @@ public class ActionUtilisateurController {
 
 	// POST /api/actions
 	@PostMapping
-	public ResponseEntity<ActionUtilisateurDTO> create(@RequestBody ActionUtilisateurDTO dto) {
+	public ResponseEntity<ActionUtilisateurDTO> create(@Valid @RequestBody ActionUtilisateurDTO dto) {
 		ActionUtilisateurDTO created = actionService.create(dto);
 		return ResponseEntity.ok(created);
 	}

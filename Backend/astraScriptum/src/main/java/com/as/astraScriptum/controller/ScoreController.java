@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.ScoreDTO;
 import com.as.astraScriptum.service.ScoreService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/scores")
 public class ScoreController {
@@ -39,14 +41,14 @@ public class ScoreController {
 
 	// POST /api/scores
 	@PostMapping
-	public ResponseEntity<ScoreDTO> create(@RequestBody ScoreDTO dto) {
+	public ResponseEntity<ScoreDTO> create(@Valid @RequestBody ScoreDTO dto) {
 		ScoreDTO created = scoreService.create(dto);
 		return ResponseEntity.ok(created);
 	}
 
 	// PUT /api/scores/{id}
 	@PutMapping("/{id}")
-	public ResponseEntity<ScoreDTO> update(@PathVariable String id, @RequestBody ScoreDTO dto) {
+	public ResponseEntity<ScoreDTO> update(@PathVariable String id, @Valid @RequestBody ScoreDTO dto) {
 		ScoreDTO updated = scoreService.update(id, dto);
 		return ResponseEntity.ok(updated);
 	}

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.as.astraScriptum.dto.DefiNIRDDTO;
 import com.as.astraScriptum.service.DefiNIRDService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/defis")
 public class DefiNIRDController {
@@ -39,14 +41,14 @@ public class DefiNIRDController {
 
 	// POST /api/defis
 	@PostMapping
-	public ResponseEntity<DefiNIRDDTO> create(@RequestBody DefiNIRDDTO dto) {
+	public ResponseEntity<DefiNIRDDTO> create(@Valid @RequestBody DefiNIRDDTO dto) {
 		DefiNIRDDTO created = defiService.create(dto);
 		return ResponseEntity.ok(created);
 	}
 
 	// PUT /api/defis/{id}
 	@PutMapping("/{id}")
-	public ResponseEntity<DefiNIRDDTO> update(@PathVariable String id, @RequestBody DefiNIRDDTO dto) {
+	public ResponseEntity<DefiNIRDDTO> update(@PathVariable String id, @Valid @RequestBody DefiNIRDDTO dto) {
 		DefiNIRDDTO updated = defiService.update(id, dto);
 		return ResponseEntity.ok(updated);
 	}
