@@ -19,8 +19,8 @@ const Bouton = () => {
   const about = () => {
     navigate("/about");
   }
-  const dev = () => {
-    navigate("/dev");
+  const savoirPlus = () => {
+    navigate("/savoirPlus");
   }
 
   const { isAuthenticated, logout } = useAuth();
@@ -40,7 +40,7 @@ const Bouton = () => {
           data-bs-toggle="tooltip"
           data-bs-placement="top"
           data-bs-title="En savoir plus"
-          onClick={about}
+          onClick={savoirPlus}
 
         >
           En savoir plus
@@ -62,7 +62,7 @@ const Bouton = () => {
           data-bs-toggle="tooltip"
           data-bs-placement="bottom"
           data-bs-title="A propos des développeurs"
-          onClick={dev}
+          onClick={about}
         >
           A propos des développeurs
         </button>
@@ -91,17 +91,17 @@ const Bouton = () => {
           </button>
         ) : (
           <NavLink to="/connexion">
-          <button
-            type="button"
-            className="btn btn-secondary anim"
-            data-bs-toggle="tooltip"
-            data-bs-placement="left"
-            data-bs-title="Se connecter"
-            onClick={seConnecter}
-          >
-            Se connecter
-          </button>
-        </NavLink>
+            <button
+              type="button"
+              className="btn btn-secondary anim"
+              data-bs-toggle="tooltip"
+              data-bs-placement="left"
+              data-bs-title="Se connecter"
+              onClick={seConnecter}
+            >
+              Se connecter
+            </button>
+          </NavLink>
         )}
       </div>
     </div>

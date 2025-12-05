@@ -1,3 +1,4 @@
+//cspell:disable
 import { Link } from "react-router-dom";
 import logoK from "../assets/img/logoK.png";
 
