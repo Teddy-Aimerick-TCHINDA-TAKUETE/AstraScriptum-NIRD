@@ -56,7 +56,7 @@ public class SecurityConfig {
 		config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
 		// 🔸 Headers autorisés
-		config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+		config.setAllowedHeaders(List.of("Authorization", "Content-Type", "Access-Control-Allow-Origin", "*"));
 
 		// 🔸 Si tu envoies le JWT dans le header + cookies éventuels
 		config.setAllowCredentials(true);
