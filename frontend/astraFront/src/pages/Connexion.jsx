@@ -1,6 +1,6 @@
 // cspell:disable
 import { useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useLocation, useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import AppBar from "../components/AppBar";
 import Bouton from "../components/Bouton";
@@ -12,6 +12,8 @@ const Connexion = () => {
   const [erreur, setErreur] = useState("");
   const { login, loading } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = (location.state && location.state.from) || "/acceuil";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,8 +24,14 @@ const Connexion = () => {
       setErreur("Email ou mot de passe incorrect.");
       return;
     }
-    // après connexion : on renvoie vers la simulation
-    navigate("/demarrer");
+
+    navigate(from, { replace: true });
+
+    // if (from === "/acceuil") {
+    //   navigate("/demarrer", { replace: true });
+    // } else {
+    //   navigate(from, { replace: true });
+    // }
   };
 
   return (

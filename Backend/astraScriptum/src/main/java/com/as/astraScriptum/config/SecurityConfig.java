@@ -7,8 +7,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
@@ -28,22 +32,13 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.csrf(csrf -> csrf.disable()) // pour simplifier en dev
-				.cors(cors -> {
-				}) // <── ajouter ça
+		http.csrf(csrf -> csrf.disable()).cors(cors -> cors.configurationSource(corsConfigurationSource()))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.authorizeHttpRequests(auth -> auth
-						// Swagger & OpenAPI en libre accès
-						.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-						// Le reste : accès libre (tu peux mettre authenticated() si tu veux sécuriser)
-						.anyRequest().permitAll())
-				.httpBasic(Customizer.withDefaults()); // auth basique
-
-		// pas de basic auth
-		http.httpBasic(Customizer.withDefaults());
-
-		// Ajouter filtre JWT (custom)
-		http.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/api/**").permitAll()
+						.requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").hasRole("ADMIN")
+						.anyRequest().denyAll())
+				.httpBasic(Customizer.withDefaults())
+				.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
 
 		return http.build();
 	}
@@ -80,4 +75,13 @@ public class SecurityConfig {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+
+	@Bean
+	public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
+		UserDetails admin = User.withUsername("teddy").password(passwordEncoder.encode("teddy12345")).roles("ADMIN")
+				.build();
+
+		return new InMemoryUserDetailsManager(admin);
+	}
+
 }

@@ -1,8 +1,12 @@
 //cspell:disable
 import React from "react";
 import "../style/components/HomePage.scss"
+import { useAuth } from "../auth/AuthContext";
 
 export default function HomePage() {
+
+    const { isAuthenticated, logout } = useAuth();
+
     return (
         <div className="home-container">
 
@@ -23,9 +27,14 @@ export default function HomePage() {
                         <a href="/presentation" className="btn btn-primary btn-lg me-3">
                             <i className="fas fa-play me-2"></i>Conseils pratiques
                         </a>
+                        {isAuthenticated ? (
+                        <a href="/demarrer" className="btn btn-primary btn-lg me-3">
+                            <i className="fas fa-play me-2"></i>Démarrer la Simulation
+                        </a>) : (
                         <a href="/connexion" className="btn btn-primary btn-lg me-3">
                             <i className="fas fa-play me-2"></i>Démarrer la Simulation
                         </a>
+                        )}
                         <a href="/ressources" className="btn btn-outline-light btn-lg">
                             <i className="fas fa-book me-2"></i>Ressources
                         </a>

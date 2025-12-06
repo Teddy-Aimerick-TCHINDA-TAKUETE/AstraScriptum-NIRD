@@ -1,7 +1,7 @@
 //cspell:disable
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 
 const Bouton = () => {
@@ -25,6 +25,8 @@ const Bouton = () => {
 
   const { isAuthenticated, logout } = useAuth();
   // const navigate = useNavigate();
+
+  const location = useLocation();
 
   const handleLogout = () => {
     logout();
@@ -90,7 +92,7 @@ const Bouton = () => {
             Se déconnecter
           </button>
         ) : (
-          <NavLink to="/connexion">
+          <NavLink to="/connexion" state={{ from: location.pathname }} replace>
             <button
               type="button"
               className="btn btn-secondary anim"
