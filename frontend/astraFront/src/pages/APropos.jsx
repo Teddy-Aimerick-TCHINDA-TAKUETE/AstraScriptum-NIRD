@@ -10,7 +10,7 @@ export default function APropos() {
     const devs = [
         { name: "BENGONO  Bruno", linkedin: "https://linkedin.com/in/bruno-bengono", github: "https://github.com/Ben-Bruno" },
         { name: "RAHOU Hind", linkedin: "http://linkedin.com/in/hind-rahou", github: "https://github.com/LaHQuiCode" },
-        { name: "TCHINDA Teddy", linkedin: "http://linkedin.com/in/teddy-aimerick-tchinda-takuete", github: "https://github.com/Teddy-Aimerick-TCHINDA-TAKUETEhttps://github.com/nom3" }
+        { name: "TCHINDA Teddy", linkedin: "http://linkedin.com/in/teddy-aimerick-tchinda-takuete", github: "https://github.com/Teddy-Aimerick-TCHINDA-TAKUETE" }
     ];
 
     return (
