@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext(null);
 
-const API_URL = "https://astrascriptum-nird-back.onrender.com/";
+const API_URL = "https://astrascriptum-nird-back.onrender.com";
 // const API_URL = "http://localhost:8080";
 
 export const AuthProvider = ({ children }) => {
