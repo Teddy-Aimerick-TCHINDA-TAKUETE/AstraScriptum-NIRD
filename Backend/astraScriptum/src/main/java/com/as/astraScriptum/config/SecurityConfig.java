@@ -34,9 +34,9 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.csrf(csrf -> csrf.disable()).cors(cors -> cors.configurationSource(corsConfigurationSource()))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/api/**").permitAll()
-						.requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").hasRole("ADMIN")
-						.anyRequest().denyAll())
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/", "/home").permitAll().requestMatchers("/api/**")
+						.permitAll().requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html")
+						.hasRole("ADMIN").anyRequest().denyAll())
 				.httpBasic(Customizer.withDefaults())
 				.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
 
