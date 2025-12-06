@@ -83,14 +83,14 @@ AstraScriptum est une plateforme web pédagogique et interactive visant à sensi
 
 ## 🧩 Fonctionnalités
 
--Authentification (login / inscription)
--Session persistante JWT
--Simulation interactive d'établissement
--Défis cybersouveraineté
--Score NIRD (progression)
--Recommandations
--Requêtes API sécurisées
--Responsive design
+- Authentification (login / inscription)
+- Session persistante JWT
+- Simulation interactive d'établissement
+- Défis cybersouveraineté
+- Score NIRD (progression)
+- Recommandations
+- Requêtes API sécurisées
+- Responsive design
 
 ---
 
